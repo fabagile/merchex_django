@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Listings</title>
+    </head>
+    <body>
+        <h1>LISTING</h1>
+        
+        <p>Les {{listings | length}} derniers événements sont :</p>
+
+        <ul>
+            {% for listing in listings %}
+            <li>{{listing.title | upper }}</li>
+            <!-- <li>{{band.name | title }}</li> -->
+            {% endfor %}
+        </ul>
+    </body>
+</html>
