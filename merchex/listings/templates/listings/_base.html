@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Merchex</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
+    </head>
+<body>
+    <div id="app">
+
+        {# requires 'listings/navbar.html' #}
+        <nav >
+            <a href="/hello" >hello</a> | 
+            <a href="/listings" >listings</a> | 
+            <a href="/about" >about</a> | 
+            <a href="/contact" >contact</a>
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <div>
+                fabagile &copy; 2023
+
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

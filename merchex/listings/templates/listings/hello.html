@@ -1,28 +1,24 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <title>Merchex</title>
-    </head>
-    <body>
-        <h1>Hello Django !</h1>
-        <p>
-            J'ai
-            {% if bands|length < 5 %}
-                peu de
-            {% elif bands|length < 10 %}
-                quelques
-            {% else %}
-                beaucoup de
-            {% endif %}
-                groupes préférés.
-        </p>
-        <p>Mes {{bands | length}} groupes préférés sont :</p>
+{% extends 'listings/_base.html' %}
 
-        <ul>
-            {% for band in bands %}
-            <li>{{band.name | upper }}</li>
-            <!-- <li>{{band.name | title }}</li> -->
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+{% block content %}
+    <h1>Hello Django !</h1>
+    <!-- <p>
+        J'ai
+        {% if bands|length < 5 %}
+            peu de
+        {% elif bands|length < 10 %}
+            quelques
+        {% else %}
+            beaucoup de
+        {% endif %}
+            groupes préférés.
+    </p> -->
+    <p>Mes {{bands | length}} groupes préférés sont :</p>
+
+    <ul>
+        {% for band in bands %}
+        <li>{{band.name | upper }}</li>
+        <!-- <li>{{band.name | title }}</li> -->
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    background: whitesmoke;
+}
+
+nav {
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    margin: 0 1em;
+}
+footer {
+    padding: 1em;
+    width: 100%;
+
+}
+footer * {
+    text-align: center;
+}
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+li::before {
+    content: "🎵";
+    padding-right: 6px;
+    /* color: lime; */
+}
