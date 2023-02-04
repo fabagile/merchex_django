@@ -4,9 +4,18 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Band(models.Model):
     class Genre(models.TextChoices):
-        HIP_HOP: 'HH'
-        SYNTH_POP: 'SP'
-        ALTERNATIVE_ROCK: 'AR'
+        HIP_HOP = 'HH'
+        SYNTH_POP = 'SP'
+        HARD_ROCK = 'HR'
+        HEAVY_METAL = 'HM'
+        DEATH_METAL = 'DM'
+        BLACK_METAL = 'BM'
+        ROCK = 'R'
+        LYRIC_ROCK = "LR"
+        ALTERNATIVE_ROCK = 'AR'
+        PROGRESSIVE_ROCK = 'PR'
+        TRANCE = 'T'
+        DANCE = 'D'
 
     name = models.fields.CharField(max_length=100)
     genre = models.fields.CharField(choices=Genre.choices, max_length=5)
@@ -16,6 +25,11 @@ class Band(models.Model):
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    band_picture_URL = models.fields.URLField(
+        null=True, blank=True, default='')
+
+    def __str__(self):
+        return f'{self.name}'
 
 
 class Listing(models.Model):
@@ -30,3 +44,6 @@ class Listing(models.Model):
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(blank=True, null=True)
     type = models.fields.CharField(choices=ListingType.choices, max_length=5)
+
+    def __str__(self):
+        return f'{self.title}'

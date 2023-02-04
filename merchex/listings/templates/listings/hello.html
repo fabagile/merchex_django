@@ -15,9 +15,14 @@
     </p> -->
     <p>Mes {{bands | length}} groupes préférés sont :</p>
 
-    <ul>
+    <div>
         {% for band in bands %}
-        <li>{{band.name | upper }}</li>
+        <div>
+
+            <img src={{band.band_picture_URL}} height="100" alt="">
+            {{band.name | upper }} {{band.}}
+
+        </li>
         <!-- <li>{{band.name | title }}</li> -->
         {% endfor %}
     </ul>
