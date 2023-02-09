@@ -7,7 +7,12 @@
 
 <ul>
     {% for listing in listings %}
-    <li>{{listing.title | upper }}</li>
+    <li>
+        <a href="{% url 'listing-id' listing.id %}">
+            {{listing.title | upper }}
+
+        </a>
+    </li>
     <!-- <li>{{band.name | title }}</li> -->
     {% endfor %}
 </ul>

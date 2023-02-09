@@ -7,6 +7,7 @@
     gap: 2em;
 
     background: whitesmoke;
+
 }
 
 nav {
@@ -31,6 +32,9 @@ main {
     flex: 1;
     padding: 0 1em;
 }
+/* main * {
+    display: block;
+} */
 footer {
     padding: 1em;
     width: 100%;
@@ -38,6 +42,15 @@ footer {
 }
 footer * {
     text-align: center;
+}
+
+.desc {
+    text-align: justify;
+    color: cyan;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 body {
@@ -54,3 +67,11 @@ li::before {
     padding-right: 6px;
     /* color: lime; */
 }
+.form-field {
+    line-break: auto;
+    margin-bottom: 16px;
+}
+.ads-block {
+    /* display: block; */
+}
+

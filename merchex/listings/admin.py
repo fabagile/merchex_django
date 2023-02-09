@@ -5,11 +5,11 @@ from listings.models import Band, Listing
 
 
 class BandAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year_formed', 'genre', 'active')
+    list_display = ('name', 'year_formed', 'genre', 'active', 'id')
 
 
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'type', 'year')
+    list_display = ('title', 'band', 'type', 'year', 'id')
 
 
 admin.site.register(Band, BandAdmin)

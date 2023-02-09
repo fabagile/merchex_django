@@ -10,10 +10,10 @@
 
         {# requires 'listings/navbar.html' #}
         <nav>
-            <div class="nav-item"><a href="/hello" >hello</a></div>
-            <div class="nav-item"><a href="/listings" >listings</a></div>
-            <div class="nav-item"><a href="/about-us" >about</a></div>
-            <div class="nav-item"><a href="/contact" >contact</a></div>
+            <div class="nav-item"><a href="{% url 'band-list' %}" >groupes</a></div>
+            <div class="nav-item"><a href="{% url 'listings' %}" >listings</a></div>
+            <div class="nav-item"><a href="{% url 'about'  %}" >about</a></div>
+            <div class="nav-item"><a href="{% url 'contact'  %}" >contact</a></div>
         </nav>
         <main>
             {% block content %}

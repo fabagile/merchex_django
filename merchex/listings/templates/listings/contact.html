@@ -2,4 +2,36 @@
 
 {% block content %}
     <h1>Contact</h1>
+
+    <form method="post" action="">
+        <div class="form-field">
+            <select value="civilian" >
+                <option>Civilité</option>
+                <option value="mr">M.</option>
+                <option value="mrs">Mme</option>
+                <option value="miss">Melle</option>
+                
+            </select>
+            <input name="fistname" placeholder="Prénom" >
+            <input name="lastname" placeholder="Nom de famille" >
+            
+        </div>
+        <div class="form-field">
+            <!-- <label for="username">identifiant ou email</label> -->
+            <input name="username" placeholder="choisissez un identifiant" >
+        </div>
+        <div class="form-field">
+            <!-- <label for="email">Adresse mail</label> -->
+
+            <input id="email" name="email" type="email" placeholder="adresse courriel" >
+            <input id="email" name="email" type="email" placeholder="confirmez adresse courriel" >
+        </div>
+        <div class="form-field">
+            <!-- <label for="password">Mot de passe</label> -->
+            <input id="password" name="password" type="password" placeholder="mot de passe" >
+            <input id="password" name="password" type="password" placeholder="confirmez mot de passe" >
+        </div>
+        <button type="submit">Enregistrer</button>
+        <button type="reset">Recommencer</button>
+    </form>
 {% endblock %}

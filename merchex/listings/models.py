@@ -17,6 +17,9 @@ class Band(models.Model):
         TRANCE = 'T'
         DANCE = 'D'
 
+    def __str__(self):
+        return f'{self.name}'
+
     name = models.fields.CharField(max_length=100)
     genre = models.fields.CharField(choices=Genre.choices, max_length=5)
     biography = models.fields.CharField(max_length=1000)
@@ -28,11 +31,14 @@ class Band(models.Model):
     band_picture_URL = models.fields.URLField(
         null=True, blank=True, default='')
 
-    def __str__(self):
-        return f'{self.name}'
+    # like_new = models.fields.BooleanField(default=False)
 
 
 class Listing(models.Model):
+
+    def __str__(self):
+        return f'{self.title}'
+
     class ListingType(models.TextChoices):
         RECORDS = 'R'
         CLOTHING = 'C'
@@ -44,6 +50,4 @@ class Listing(models.Model):
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(blank=True, null=True)
     type = models.fields.CharField(choices=ListingType.choices, max_length=5)
-
-    def __str__(self):
-        return f'{self.title}'
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)

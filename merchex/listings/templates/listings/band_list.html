@@ -1,7 +1,7 @@
 {% extends 'listings/_base.html' %}
 
 {% block content %}
-    <h1>Hello Django !</h1>
+    <h1>Groupes</h1>
     <!-- <p>
         J'ai
         {% if bands|length < 5 %}
@@ -13,15 +13,22 @@
         {% endif %}
             groupes préférés.
     </p> -->
-    <p>Mes {{bands | length}} groupes préférés sont :</p>
+    <!-- <p>Mes {{bands | length}} groupes préférés sont :</p> -->
 
-    <div>
+    <ul>
         {% for band in bands %}
-        <div>
+        <li>
 
-            <img src={{band.band_picture_URL}} height="100" alt="">
-            {{band.name | upper }} {{band.}}
+            <a href="{% url 'band-detail' band.id %}">
+    
 
+        
+        
+                    <!-- <img src={{band.band_picture_URL}} height="100" alt=""> -->
+                    {{band.name | upper }}
+        
+
+            </a>
         </li>
         <!-- <li>{{band.name | title }}</li> -->
         {% endfor %}
